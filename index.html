@@ -9,6 +9,10 @@
     <link rel="apple-touch-icon" href="icon.png" />
     <link rel="icon" href="icon.png" type="image/x-icon" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"
+    />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
 
@@ -34,19 +38,11 @@
           <div class="content">
             <div class="inputs">
               <div class="color-picker">
-                <text-field
-                  id="start-color"
-                  label="Start Colour"
-                  defaultValue="#c8acd9"
-                ></text-field>
+                <label class="color-picker-label">Start Colour</label>
                 <div class="start-picker"></div>
               </div>
               <div class="color-picker">
-                <text-field
-                  id="end-color"
-                  label="End Colour"
-                  defaultValue="#7e3aa7"
-                ></text-field>
+                <label class="color-picker-label">End Colour</label>
                 <div class="end-picker"></div>
               </div>
               <text-field
@@ -71,10 +67,6 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"
-    />
     <link
       href="https://fonts.googleapis.com/css?family=Oswald:200,300&display=swap"
       rel="stylesheet"

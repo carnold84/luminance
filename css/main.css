@@ -116,39 +116,12 @@ body {
   background-color: #1e1e23;
 }
 
-.color-picker {
-  align-items: flex-end;
-  display: flex;
-  flex-grow: 1;
-  margin: 0 20px 0 0;
-  position: relative;
-}
-
-.start-picker,
-.end-picker {
-  margin: 0 0 5px;
-}
-
-.pickr {
-  margin: 0 0 2px;
-  position: absolute !important;
-  right: 20px;
-  top: 54px;
-}
-
-.num-colors {
-  width: 140px;
-}
-
-text-field {
-  font-family: "Oswald", Helvetica, Arial, sans-serif;
-}
-
 .wrapper {
   align-items: center;
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding: 0 20px;
   position: absolute;
   width: 100%;
 }
@@ -165,7 +138,7 @@ text-field {
   align-items: center;
   display: flex;
   justify-content: center;
-  padding: 30px 20px 30px;
+  margin: 30px 0;
   width: 100%;
 }
 
@@ -185,25 +158,78 @@ text-field {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 0 20px 20px;
   width: 100%;
 }
 
-@media (min-width: 768px) {
-  .header {
-    padding: 30px 20px 40px;
-  }
+.inputs {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 20px;
 }
 
-.inputs {
+.color-picker {
   display: flex;
-  margin: 0 0 20px;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0 0 20px 0;
+  position: relative;
+  width: auto;
+}
+
+.lum-picker {
+  width: auto !important;
+}
+
+.color-picker-label {
+  font-size: 1.2rem;
+  margin: 0 0 10px;
+}
+
+.pickr {
+  display: none;
+  margin: 0 0 2px;
+}
+
+.num-colors {
+  width: 140px;
+}
+
+text-field {
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
 }
 
 .outputs {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  margin: 0 0 20px;
+  min-height: 400px;
+}
+
+@media (min-width: 1080px) {
+  .inputs {
+    flex-direction: row;
+  }
+
+  .color-picker {
+    margin: 0 20px 20px 0;
+  }
+
+  .outputs {
+    min-height: unset;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    margin: 30px 0 40px;
+  }
+
+  .color-picker {
+    margin: 0 20px 20px 0;
+    width: 400px;
+  }
 }
 
 .swatches {
@@ -224,9 +250,9 @@ text-field {
   color: #444444;
   flex-grow: 1;
   font-family: "Oswald", Helvetica, Arial, sans-serif;
-  font-size: 2rem;
+  font-size: 1.2rem;
   height: 100%;
-  line-height: 3rem;
+  line-height: 1.8rem;
   padding: 15px 20px;
   width: 100%;
 }
