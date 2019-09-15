@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="apple-touch-icon" href="icon.png" />
+    <link rel="icon" href="icon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body class="light-theme">
+    <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <div id="root">
+      <div class="wrapper">
+        <div class="container">
+          <div class="header">
+            <img class="logo" src="img/logo.png" />
+            <h1 class="header-title" id="header-title"></h1>
+          </div>
+          <div class="content">
+            <div class="inputs">
+              <div class="color-picker">
+                <text-field
+                  id="start-color"
+                  label="Start Colour"
+                  defaultValue="#c8acd9"
+                ></text-field>
+                <div class="start-picker"></div>
+              </div>
+              <div class="color-picker">
+                <text-field
+                  id="end-color"
+                  label="End Colour"
+                  defaultValue="#7e3aa7"
+                ></text-field>
+                <div class="end-picker"></div>
+              </div>
+              <text-field
+                class="num-colors"
+                id="num-colors"
+                label="Number of Colours"
+                defaultValue="10"
+              ></text-field>
+            </div>
+            <div class="outputs">
+              <div class="swatches" id="swatches"></div>
+              <textarea class="json" id="output"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.0.6/chroma.min.js"></script>
+    <script src="js/TextField.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:200,300&display=swap"
+      rel="stylesheet"
+    />
+  </body>
+</html>
