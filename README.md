@@ -1,5 +1,3 @@
----
-permalink: /index.html
----
+Luminance
 
-luminance
+Useful color tools built using HTML, CSS and plain Javascript.
