@@ -178,6 +178,8 @@ body {
 }
 
 .lum-picker {
+  border: 1px solid #e3e3e3;
+  box-shadow: none;
   width: auto !important;
 }
 
@@ -209,11 +211,12 @@ text-field {
 
 @media (min-width: 1080px) {
   .inputs {
+    align-items: flex-start;
     flex-direction: row;
   }
 
   .color-picker {
-    margin: 0 20px 20px 0;
+    margin: 0 20px 0 0;
   }
 
   .outputs {
@@ -227,7 +230,6 @@ text-field {
   }
 
   .color-picker {
-    margin: 0 20px 20px 0;
     width: 400px;
   }
 }
@@ -246,7 +248,7 @@ text-field {
 }
 
 .json {
-  border: 1px solid #eeeeee;
+  border: 1px solid #e3e3e3;
   color: #444444;
   flex-grow: 1;
   font-family: "Oswald", Helvetica, Arial, sans-serif;
