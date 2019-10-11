@@ -30,31 +30,67 @@
 
     <div id="root">
       <div class="wrapper">
-        <div class="container">
-          <div class="header">
-            <img class="logo" src="img/logo.png" />
-            <h1 class="header-title" id="header-title"></h1>
+        <div class="main-header">
+          <div class="app-info">
+            <img class="app-logo" src="img/logo.png" />
+            <h1 class="app-title" id="header-title"></h1>
           </div>
-          <div class="content">
-            <div class="inputs">
-              <div class="color-picker">
-                <label class="color-picker-label">Start Colour</label>
-                <div class="start-picker"></div>
+          <nav class="main-nav">
+            <button class="item" data-screen-id="color-range">
+              Colour Range
+            </button>
+            <button class="item" data-screen-id="chart-colors">
+              Chart Colours
+            </button>
+          </nav>
+        </div>
+        <div class="main-content">
+          <div class="container">
+            <div id="color-range" class="screen">
+              <div class="inputs">
+                <div class="color-picker">
+                  <label class="label">Start Colour</label>
+                  <div class="start-picker"></div>
+                </div>
+                <div class="color-picker">
+                  <label class="label">End Colour</label>
+                  <div class="end-picker"></div>
+                </div>
               </div>
-              <div class="color-picker">
-                <label class="color-picker-label">End Colour</label>
-                <div class="end-picker"></div>
+              <div class="outputs">
+                <div class="colors">
+                  <p class="label">Colors</p>
+                  <div class="swatches" id="swatches"></div>
+                </div>
+                <text-field
+                  class="num-colors"
+                  id="num-colors"
+                  label="Number of Colours"
+                  defaultValue="10"
+                ></text-field>
               </div>
-              <text-field
-                class="num-colors"
-                id="num-colors"
-                label="Number of Colours"
-                defaultValue="10"
-              ></text-field>
-            </div>
-            <div class="outputs">
-              <div class="swatches" id="swatches"></div>
               <textarea class="json" id="output"></textarea>
+            </div>
+            <div id="chart-colors" class="screen">
+              <div class="inputs">
+                <div class="color-picker">
+                  <label class="label">Bar Colour</label>
+                  <div class="bar-picker"></div>
+                </div>
+                <div class="color-picker">
+                  <label class="label">Line Colour</label>
+                  <div class="line-picker"></div>
+                </div>
+                <div class="color-picker">
+                  <label class="label">Background Colour</label>
+                  <div class="bg-picker"></div>
+                </div>
+              </div>
+              <div class="outputs">
+                <div class="chart-container" id="chart-container">
+                  <canvas class="chart" id="chart"></canvas>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -63,9 +99,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.0.6/chroma.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <script src="js/TextField.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
 
     <link
       href="https://fonts.googleapis.com/css?family=Oswald:200,300&display=swap"

@@ -104,7 +104,7 @@ textarea {
 }
 
 body {
-  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 
@@ -121,7 +121,6 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 0 20px;
   position: absolute;
   width: 100%;
 }
@@ -134,31 +133,93 @@ body {
   width: 100%;
 }
 
-.header {
+.main-header {
   align-items: center;
+  border-bottom: #eeeeee solid 1px;
   display: flex;
-  justify-content: center;
-  margin: 30px 0;
+  flex-direction: column;
+  margin: 0 0 30px;
+  padding: 20px;
   width: 100%;
 }
 
-.logo {
+.app-info {
+  display: flex;
+  margin: 0 0 20px;
+}
+
+.app-logo {
+  align-items: center;
+  display: flex;
+  height: 40px;
   margin: 0 10px 0 0;
 }
 
-.header-title {
-  color: #7e3aa7;
-  font-size: 3rem;
+.app-title {
+  color: #444444;
+  font-size: 1.8rem;
   font-weight: 400;
-  line-height: 3rem;
   margin: 0;
 }
 
-.content {
+.main-nav .list {
   display: flex;
+  flex-direction: column;
+}
+
+.main-nav .item {
+  background-color: transparent;
+  border: none;
+  color: #444444;
+  font-size: 1.2rem;
+  margin: 0 0 0 20px;
+  padding: 0 0 4px;
+}
+
+.main-nav .item:first-child {
+  margin: 0;
+}
+
+.main-nav .item.is-active {
+  border-bottom: #8d5ec3 solid 2px;
+  color: #6f3fa5;
+}
+
+.main-content {
+  flex-grow: 1;
+  margin: 0 0 30px;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.show {
+  display: flex;
+}
+
+#color-range {
   flex-direction: column;
   flex-grow: 1;
   width: 100%;
+}
+
+#chart-colors {
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.chart {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.chart-container {
+  flex-grow: 1;
+  padding: 20px;
+  position: relative;
 }
 
 .inputs {
@@ -183,7 +244,7 @@ body {
   width: auto !important;
 }
 
-.color-picker-label {
+.label {
   font-size: 1.2rem;
   margin: 0 0 10px;
 }
@@ -198,15 +259,19 @@ body {
 }
 
 text-field {
-  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
 }
 
 .outputs {
   display: flex;
-  flex-direction: column;
   flex-grow: 1;
   margin: 0 0 20px;
   min-height: 400px;
+  position: relative;
+}
+
+.colors {
+  flex-grow: 1;
 }
 
 @media (min-width: 1080px) {
@@ -219,14 +284,34 @@ text-field {
     margin: 0 20px 0 0;
   }
 
+  .color-picker:last-child {
+    margin: 0;
+  }
+
   .outputs {
     min-height: unset;
   }
 }
 
 @media (min-width: 768px) {
+  .app-info {
+    display: flex;
+    margin: 0;
+  }
+
   .header {
     margin: 30px 0 40px;
+  }
+
+  .main-header {
+    align-items: center;
+    border-bottom: #eeeeee solid 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 30px;
+    padding: 20px 30px;
+    width: 100%;
   }
 
   .color-picker {
@@ -251,7 +336,7 @@ text-field {
   border: 1px solid #e3e3e3;
   color: #444444;
   flex-grow: 1;
-  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
   font-size: 1.2rem;
   height: 100%;
   line-height: 1.8rem;
@@ -269,7 +354,7 @@ text-field {
   border-radius: 3px;
   color: #ffffff;
   cursor: pointer;
-  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
   padding: 8px 15px;
@@ -352,7 +437,7 @@ text-field {
 
 .clearfix:before,
 .clearfix:after {
-  content: " ";
+  content: ' ';
   /* 1 */
   display: table;
   /* 2 */
@@ -401,18 +486,18 @@ text-field {
     text-decoration: underline;
   }
   a[href]:after {
-    content: " (" attr(href) ")";
+    content: ' (' attr(href) ')';
   }
   abbr[title]:after {
-    content: " (" attr(title) ")";
+    content: ' (' attr(title) ')';
   }
   /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
+  a[href^='#']:after,
+  a[href^='javascript:']:after {
+    content: '';
   }
   pre {
     white-space: pre-wrap !important;
